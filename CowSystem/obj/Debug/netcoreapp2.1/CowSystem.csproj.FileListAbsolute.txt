@@ -36,3 +36,13 @@ D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CoreCom
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoGanado\Create.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoGanado\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoBalance\Create.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoBalance\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoBalance\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\EstadoGanado\Create.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\EstadoGanado\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\EstadoGanado\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Bitacora\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Create.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Index.cshtml.g.cs

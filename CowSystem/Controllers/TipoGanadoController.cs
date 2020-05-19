@@ -6,39 +6,48 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CowSystem.Models;
 using CowSystem.Data;
+using CowSystem.Code;
 
 namespace CowSystem.Controllers
 {
     public class TipoGanadoController : Controller
     {
+        #region Context
         private readonly ApplicationDbContext _context;
 
-        public TipoGanadoController(ApplicationDbContext context) {
+        public TipoGanadoController(ApplicationDbContext context)
+        {
             _context = context;
         }
+        #endregion
+
+        #region List
         public IActionResult Index()
         {
             var Types = _context.TipoGanado.ToList();
             List<TipoGanadoViewModel> List = new List<TipoGanadoViewModel>();
             foreach (var item in Types)
             {
-                TipoGanadoViewModel type = new TipoGanadoViewModel {
+                TipoGanadoViewModel type = new TipoGanadoViewModel
+                {
                     IdTipoGanado = item.IdTipoGanado,
                     Descripcion = item.Descripcion,
-                    UltimaActualizacion = item.UltimaActualizacion
+                    UltimaActualizacion = Utilitaries.getRelativeTime(item.UltimaActualizacion)
                 };
                 List.Add(type);
             }
             return View(List);
         }
+        #endregion
 
-        
-        public IActionResult Create() {
+        #region Create
+        public IActionResult Create()
+        {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(TipoGanadoViewModel tipo) {
-            string msj;
+        public IActionResult Create(TipoGanadoViewModel tipo)
+        {
             if (ModelState.IsValid)
             {
 
@@ -51,20 +60,24 @@ namespace CowSystem.Controllers
                     };
                     _context.TipoGanado.Add(tipoGanado);
                     _context.SaveChanges();
-                    msj = "Todo Bien";
+                    TempData["msj"] = "Elemento agregado";
                 }
                 catch (Exception e)
                 {
-                    msj = "Error " + e.InnerException;
+                    TempData["err"] = e.InnerException.ToString();
                 }
             }
-            else {
-                msj = "Formulario incompleto";
+            else
+            {
+                TempData["err"] = "Formulario incompleto";
             }
-            TempData["msj"] = msj;
             return RedirectToAction("Index");
         }
-        public IActionResult Edit(int id) {
+        #endregion
+
+        #region Edit
+        public IActionResult Edit(int id)
+        {
             TipoGanado tipoGanado = _context.TipoGanado.Find(id);
 
             if (tipoGanado != null)
@@ -73,12 +86,13 @@ namespace CowSystem.Controllers
                 {
                     IdTipoGanado = tipoGanado.IdTipoGanado,
                     Descripcion = tipoGanado.Descripcion,
-                    UltimaActualizacion = tipoGanado.UltimaActualizacion
+                    UltimaActualizacion = Utilitaries.getRelativeTime(tipoGanado.UltimaActualizacion)
                 };
                 return View(tipo);
             }
-            else {
-                TempData["msj"] = "No se encontro el elemento";
+            else
+            {
+                TempData["err"] = "No se encontro el elemento";
                 return RedirectToAction("Index");
             }
         }
@@ -97,22 +111,26 @@ namespace CowSystem.Controllers
                     };
                     _context.TipoGanado.Update(tipoGanado);
                     _context.SaveChanges();
-                    TempData["msj"] = "Todo Bien";
+                    TempData["msj"] = "Elemento modificado";
                 }
                 catch (Exception e)
                 {
-                    TempData["msj"] = "Error " + e.InnerException;
+                    TempData["err"] = e.InnerException.ToString();
                 }
 
                 return RedirectToAction("Index");
             }
-            else {
-                TempData["msj"] = "Error al rellenar el formulario";
+            else
+            {
+                TempData["err"] = "Error al rellenar el formulario";
                 return RedirectToAction("Index");
             }
         }
+        #endregion
 
-        public IActionResult Delete(int id) {
+        #region Delete
+        public IActionResult Delete(int id)
+        {
             TipoGanado tipoGanado = _context.TipoGanado.Find(id);
 
             if (tipoGanado != null)
@@ -121,19 +139,20 @@ namespace CowSystem.Controllers
                 {
                     _context.TipoGanado.Remove(tipoGanado);
                     _context.SaveChanges();
-                    TempData["msj"] = "Eliminado";
+                    TempData["msj"] = "Elemento eliminado";
                 }
                 catch (Exception e)
                 {
-                    TempData["msj"] = "Error " + e.InnerException;
+                    TempData["err"] = e.InnerException.ToString();
                 }
             }
             else
             {
-                TempData["msj"] = "No se encontro el elemento";
-                
+                TempData["err"] = "No se encontro el elemento";
+
             }
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }

@@ -14,5 +14,9 @@ namespace CowSystem.Data
             
         }
         public DbSet<TipoGanado> TipoGanado { get; set; }
+        public DbSet<TipoBalance> TipoBalance { get; set; }
+        public DbSet<EstadoGanado> EstadoGanado { get; set; }
+        public DbSet<Bitacora> Bitacora { get; set; }
+        public DbSet<Gasto> Gasto { get; set; }
     }
 }

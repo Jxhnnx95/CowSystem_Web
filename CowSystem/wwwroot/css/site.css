@@ -2,7 +2,6 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 0;
-    padding-bottom: 20px;
     background:#f5f5f5;
 }
 .menu {
@@ -11,6 +10,20 @@ body {
 .contenedor {
     padding-top: 20px;
 }
+
+table.table-fit {
+    width: auto !important;
+    table-layout: auto !important;
+}
+
+    table.table-fit thead th, table.table-fit tfoot th {
+        width: auto !important;
+    }
+
+    table.table-fit tbody td, table.table-fit tfoot td {
+        width: auto !important;
+    }
+
 .nav-color {
     background: #0EB752;
     color:#fff;
@@ -18,15 +31,18 @@ body {
     .nav-color a {
     color:#fff;
     }
-.btn-white {
-    color:#fff;
+.dropdown-item {
+    color:#000!important;
 }
-.listTable {
+.btn-white {
+    color: #fff;
+}
+.content-section {
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.listTable-head {
+.content-section-head {
     background: #435D7D;
     padding: 7px 20px;
     color: #fff;
@@ -34,8 +50,12 @@ body {
     margin-bottom: 10px;
     border-radius: 5px 5px 0 0;
 }
-.listTable-body {
-    padding-bottom:20px;
+.content-section-body {
+    padding-bottom: 20px;
+}
+
+.control-label {
+    font-size:1.3em;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */

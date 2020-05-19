@@ -8,11 +8,11 @@ namespace CowSystem.Models
     {
         [Key]
         public int IdTipoGanado { get; set; }
-        [DisplayName("Descripcion")]
+        [DisplayName("Descripción")]
         [Required]
         [MaxLength(100,ErrorMessage ="Debe tener menos de 100 caracteres")]
         public string Descripcion { get; set; }
         [DisplayName("Actualización")]
-        public DateTime UltimaActualizacion { get; set; }
+        public string UltimaActualizacion { get; set; }
     }
 }
