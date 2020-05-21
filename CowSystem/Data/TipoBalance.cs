@@ -12,5 +12,6 @@ namespace CowSystem.Data
         public int IdTipoBalance { get; set; }
         public string Descripcion { get; set; }
         public DateTime UltimaActualizacion { get; set; }
+        public virtual ICollection<HistorialFinanciero> HistorialFinanciero { get; set; }
     }
 }

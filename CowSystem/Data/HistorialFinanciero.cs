@@ -15,5 +15,8 @@ namespace CowSystem.Data
         public int IdTipoBalance { get; set; }
         public double Monto { get; set; }
         public DateTime UltimaActualizacion { get; set; }
+        public virtual Ganado IdGanadoNavigation { get; set; }
+        public virtual Gasto IdGastoNavigation { get; set; }
+        public virtual TipoBalance IdTipoBalanceNavigation { get; set; }
     }
 }

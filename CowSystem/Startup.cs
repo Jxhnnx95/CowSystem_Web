@@ -35,7 +35,7 @@ namespace CowSystem
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseLazyLoadingProxies().UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -67,7 +67,7 @@ namespace CowSystem
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=TipoGanado}/{action=Index}/{id?}");
+                    template: "{controller=Ternero}/{action=Index}/{id?}");
             });
         }
     }

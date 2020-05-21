@@ -32,8 +32,6 @@ D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.pdb
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.genruntimeconfig.cache
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CopyComplete
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoGanado\Index.cshtml.g.cs
-D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CoreCompileInputs.cache
-D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoGanado\Create.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoGanado\Edit.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\TipoBalance\Create.cshtml.g.cs
@@ -46,3 +44,8 @@ D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Bitacora\Ind
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Create.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Edit.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Create.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CoreCompileInputs.cache
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

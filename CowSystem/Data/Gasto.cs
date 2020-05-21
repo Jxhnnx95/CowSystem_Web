@@ -16,5 +16,6 @@ namespace CowSystem.Data
         public double Monto { get; set; }
         public string Descripcion { get; set; }
         public DateTime UltimaActualizacion { get; set; }
+        public virtual ICollection<HistorialFinanciero> HistorialFinanciero { get; set; }
     }
 }

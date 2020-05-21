@@ -76,7 +76,7 @@ using CowSystem.Models;
             WriteLiteral("\r\n                </div>\r\n                <div class=\"col-6 col-sm-2\">\r\n                    ");
             EndContext();
             BeginContext(388, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc766a37dcc342a3aef14cf5325e4077", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c6bd70a5f85457c90a40798fe343e3b", async() => {
                 BeginContext(445, 43, true);
                 WriteLiteral("<i class=\"lni lni-circle-plus\"></i> Agregar");
                 EndContext();
@@ -240,7 +240,7 @@ using CowSystem.Models;
             WriteLiteral("\r\n                                    </td>\r\n                                    <td style=\"text-align:center;\">");
             EndContext();
             BeginContext(2996, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c5c0a3ce1f4466581a964420de904a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "115ee1b95d304b3ab4849a64810ceff4", async() => {
                 BeginContext(3070, 34, true);
                 WriteLiteral("<i class=\"lni lni-pencil-alt\"></i>");
                 EndContext();
@@ -276,7 +276,7 @@ using CowSystem.Models;
             WriteLiteral("</td>\r\n                                    <td style=\"text-align:center;\">");
             EndContext();
             BeginContext(3182, 153, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28b61ff407214354a8364226aefa8d35", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4961be5d8264a9680953fb466cb6d3a", async() => {
                 BeginContext(3302, 29, true);
                 WriteLiteral("<i class=\"lni lni-trash\"></i>");
                 EndContext();

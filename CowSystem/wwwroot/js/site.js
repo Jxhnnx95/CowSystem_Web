@@ -86,5 +86,7 @@
     });
     $("#tablaGasto").DataTable({
     });
+    $("#tablaTerneros").DataTable({
+    });
 
 });

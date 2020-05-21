@@ -12,5 +12,6 @@ namespace CowSystem.Data
         public int IdTipoGanado { get; set; }
         public string Descripcion { get; set; }
         public DateTime UltimaActualizacion { get; set; }
+        public virtual ICollection<Ganado> Ganado { get; set; }
     }
 }
