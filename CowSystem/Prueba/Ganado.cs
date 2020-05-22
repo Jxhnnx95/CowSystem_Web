@@ -11,6 +11,7 @@ namespace CowSystem.Prueba
         }
 
         public int IdGanado { get; set; }
+        public int IdEmpresa { get; set; }
         public string Codigo { get; set; }
         public int? Tipo { get; set; }
         public int? Estado { get; set; }

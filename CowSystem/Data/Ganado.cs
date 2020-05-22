@@ -11,6 +11,7 @@ namespace CowSystem.Data
     {
         [Key]
         public int IdGanado { get; set; }
+        public int IdEmpresa { get; set; }
         public string Codigo { get; set; }
         [ForeignKey("TipoNavigation")]
         public int? Tipo { get; set; }
@@ -20,7 +21,7 @@ namespace CowSystem.Data
         public DateTime? FechaNacimiento { get; set; }
         public double? Peso { get; set; }
         public double? Valor { get; set; }
-        public DateTime? ValorPeso { get; set; }
+        public double? ValorPeso { get; set; }
         public int? IdMadre { get; set; }
         public int? IdPadre { get; set; }
         public int? Partos { get; set; }

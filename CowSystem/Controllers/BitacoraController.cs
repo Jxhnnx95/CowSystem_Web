@@ -32,10 +32,12 @@ namespace CowSystem.Controllers
                 BitacoraViewModel type = new BitacoraViewModel
                 {
                     IdRegistro = item.IdRegistro,
-                    Tabla = item.Tabla,
-                    Operacion = item.Operacion,
-                    Identificador = item.Identificador,
-                    Usuario = item.Usuario,
+                    Ganado = item.GanadoNavigation.Codigo,
+                    GanadoURL = item.GanadoNavigation.Tipo == 2 ? "/Ternero/Details/" + item.GanadoNavigation.IdGanado : item.GanadoNavigation.Tipo == 3 ? "/Ternero/Details/" + item.GanadoNavigation.IdGanado : item.GanadoNavigation.Tipo == 4 ? "/Vaca/Details/" + item.GanadoNavigation.IdGanado : "/Toro/Details/" + item.GanadoNavigation.IdGanado,
+                    TipoBalance = item.AccionNavigation.Descripcion,
+                    Gasto = item.HistorialNavigation.Monto.ToString(),
+                    GastoURL = "/Gasto/Details/"+item.HistorialNavigation.IdGasto,
+                    Usuario = "Falta usuario!",
                     FechaRegistro = item.FechaRegistro.ToShortDateString()
                 };
                 List.Add(type);

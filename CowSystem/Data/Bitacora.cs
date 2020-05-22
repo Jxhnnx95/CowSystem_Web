@@ -10,10 +10,16 @@ namespace CowSystem.Data
     {
         [Key]
         public int IdRegistro { get; set; }
-        public string Tabla { get; set; }
-        public string Operacion { get; set; }
-        public string Identificador { get; set; }
-        public string Usuario { get; set; }
+        public int? IdEmpresa { get; set; }
+        public int? IdGanado { get; set; }
+        public int? IdAccion { get; set; }
+        public int? IdHistorial { get; set; }
+        public string Url { get; set; }
+        public int? IdUsuario { get; set; }
         public DateTime FechaRegistro { get; set; }
+        public virtual Empresa EmpresaNavigation { get; set; }
+        public virtual Ganado GanadoNavigation { get; set; }
+        public virtual Accion AccionNavigation { get; set; }
+        public virtual HistorialFinanciero HistorialNavigation { get; set; }
     }
 }

@@ -49,3 +49,4 @@ D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Edit
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Index.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CoreCompileInputs.cache
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Details.cshtml.g.cs

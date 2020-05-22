@@ -1,0 +1,147 @@
+﻿@model CowSystem.Models.TerneroViewModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-4">
+            <div class="content-section">
+                <div class="content-section-head">
+                    <div class="row justify-content-between">
+                        <div class="col-6 col-sm-4">
+                            @ViewData["Title"]
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section-body">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table  table-sm">
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.Codigo)</th>
+                                            <td>@Html.DisplayFor(model => model.Codigo)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.TipoString)</th>
+                                            <td>@Html.DisplayFor(model => model.TipoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.EstadoString)</th>
+                                            <td>@Html.DisplayFor(model => model.EstadoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.EdadString)</th>
+                                            <td>@Html.DisplayFor(model => model.EdadString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.FechaNacimientoString)</th>
+                                            <td>@Html.DisplayFor(model => model.FechaNacimientoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.FechaIngresoString)</th>
+                                            <td>@Html.DisplayFor(model => model.FechaIngresoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.FechaSalidaString)</th>
+                                            <td>@Html.DisplayFor(model => model.FechaSalidaString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.PesoString)</th>
+                                            <td>@Html.DisplayFor(model => model.PesoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.ValorPesoString)</th>
+                                            <td>@Html.DisplayFor(model => model.ValorPesoString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.ValorString)</th>
+                                            <td>@Html.DisplayFor(model => model.ValorString)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.MadreString)</th>
+                                            <td><a href="@Html.DisplayFor(model => model.MadreUrl)" class="btn btn-link">@Html.DisplayFor(model => model.MadreString)</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.PadreString)</th>
+                                            <td><a href="@Html.DisplayFor(model => model.PadreUrl)" class="btn btn-link">@Html.DisplayFor(model => model.PadreString)</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">@Html.DisplayNameFor(model => model.UltimaActualizacion)</th>
+                                            <td>@Html.DisplayFor(model => model.UltimaActualizacion)</td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-5">
+            <div class="content-section">
+                <div class="content-section-head">
+                    <div class="row justify-content-between">
+                        <div class="col-6 col-sm-9">
+                            Eventos relacionados
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="content-section-body">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <ul class="list-group list-group-flush">
+                                @foreach (var item in Model.EventList)
+                                {
+                                    <li class="list-group-item"><a href="@item.Url" class="btn btn-link">@item.Description</a></li>
+                                }
+                            </ul>
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-3">
+            <div class="content-section">
+                <div class="content-section-head">
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-sm-6">
+                            Acciones
+                        </div>
+                        <div class="col-6 col-sm-6">
+                            <a asp-action="Index" class="btn btn-block btn-danger"><i class="lni lni-arrow-left-circle"></i> Volver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section-body">
+                    <div class="row justify-content-center">
+                        <div class="col-11">
+
+                                <a asp-action="History" class="btn btn-warning btn-block" asp-route-id="@Model.IdGanado"><i class="lni lni-revenue"></i> Historial Financiero</a>
+                                <a asp-action="Sell" class="btn btn-success btn-block" asp-route-id="@Model.IdGanado"><i class="lni lni-revenue"></i> Declarar venta</a>
+                                <a asp-action="Death" class="btn btn-danger btn-block" asp-route-id="@Model.IdGanado"><i class="lni lni-target"></i> Declarar muerte</a>
+                                <a asp-action="Edit" class="btn btn-primary btn-block" asp-route-id="@Model.IdGanado"><i class="lni lni-pencil-alt"></i> Modificar</a>
+                              
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

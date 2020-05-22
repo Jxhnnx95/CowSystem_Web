@@ -13,6 +13,7 @@ namespace CowSystem.Data
         {
             
         }
+        public virtual DbSet<Accion> Accion { get; set; }
         public virtual DbSet<Bitacora> Bitacora { get; set; }
         public virtual DbSet<EstadoGanado> EstadoGanado { get; set; }
         public virtual DbSet<Ganado> Ganado { get; set; }
@@ -20,6 +21,7 @@ namespace CowSystem.Data
         public virtual DbSet<HistorialFinanciero> HistorialFinanciero { get; set; }
         public virtual DbSet<TipoBalance> TipoBalance { get; set; }
         public virtual DbSet<TipoGanado> TipoGanado { get; set; }
+        public virtual DbSet<Empresa> Empresa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,17 +32,7 @@ namespace CowSystem.Data
 
                 entity.Property(e => e.FechaRegistro).HasColumnType("datetime");
 
-                entity.Property(e => e.Identificador).HasMaxLength(50);
-
-                entity.Property(e => e.Operacion)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Tabla).HasMaxLength(50);
-
-                entity.Property(e => e.Usuario)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                
             });
 
             modelBuilder.Entity<EstadoGanado>(entity =>
@@ -70,7 +62,6 @@ namespace CowSystem.Data
 
                 entity.Property(e => e.UltimaActualizacion).HasColumnType("datetime");
 
-                entity.Property(e => e.ValorPeso).HasColumnType("datetime");
 
                 entity.HasOne(d => d.EstadoNavigation)
                     .WithMany(p => p.Ganado)

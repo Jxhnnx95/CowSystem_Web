@@ -8,16 +8,22 @@ namespace CowSystem.Models
     {
         [Key]
         public int IdRegistro { get; set; }
-        [DisplayName("Descripción")]
-        public string Descripcion { get; set; }
-        [DisplayName("Tabla")]
-        public string Tabla { get; set; }
+        [DisplayName("Ganado")]
+        public string Ganado { get; set; }
+        [DisplayName("Ganado")]
+        public string GanadoURL { get; set; }
         [DisplayName("Operación")]
-        public string Operacion { get; set; }
-        [DisplayName("Identificador")]
-        public string Identificador { get; set; }
+        public string TipoBalance { get; set; }
+        [DisplayName("Operación")]
+        public string TipoBalanceURL { get; set; }
+        [DisplayName("Factura")]
+        public string Gasto { get; set; }
+        [DisplayName("Factura")]
+        public string GastoURL { get; set; }
         [DisplayName("Usuario")]
         public string Usuario { get; set; }
+        [DisplayName("Usuario")]
+        public string UsuarioURL { get; set; }
         [DisplayName("FechaRegistro")]
         public string FechaRegistro { get; set; }
     }

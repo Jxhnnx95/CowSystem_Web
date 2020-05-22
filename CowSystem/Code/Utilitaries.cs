@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,36 @@ namespace CowSystem.Code
 {
     public static class Utilitaries
     {
+        public static int IdEmpresa = 1; 
+        public static string ConvertToColon(double money) {
+            return money.ToString("C", CultureInfo.CreateSpecificCulture("es-CR"));
+        }
+        public static string GetDifferenceDate(DateTime startDate, DateTime endDate) {
+            string msj = "";
+            int years = startDate.Year - endDate.Year;
+            int months = 12 * (startDate.Year - endDate.Year) + startDate.Month - endDate.Month;
+            years = months / 12;
+            months = months -(years * 12) ;
+
+            if (years == 0 && months == 0) msj= "0 meses";
+
+            if (years == 0 && months == 1) msj= "1 mes";
+            
+            if (years == 0 && (months != 0 && months>1)) msj = months +" meses";
+
+            if (years == 1 && months == 0) msj = years +" 1 año";
+
+            if ((years != 0 && years > 1) && months == 0) msj = years +" años";
+
+            if (years == 1 && months == 1) msj = "1 año con 1 mes";
+            if (years == 1 && (months != 0 && months > 1)) msj = "1 año con "+months+" meses";
+
+            if ((years != 0 && years > 1) && months == 1) msj = years +" años con 1 mes";
+            if ((years != 0 && years > 1) && (months != 0 && months > 1)) msj = years +" años con "+months+" meses";
+
+            return msj;
+            
+        }
         public static string getRelativeTime(DateTime yourDate) {
 
 

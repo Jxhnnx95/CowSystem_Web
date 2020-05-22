@@ -11,6 +11,7 @@ namespace CowSystem.Prueba
         }
 
         public int IdGasto { get; set; }
+        public int IdEmpresa { get; set; }
         public DateTime Fecha { get; set; }
         public string Factura { get; set; }
         public string Proveedor { get; set; }
