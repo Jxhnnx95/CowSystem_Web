@@ -75,7 +75,7 @@ using CowSystem.Models;
             WriteLiteral("\r\n                </div>\r\n                <div class=\"col-6 col-sm-2\">\r\n                    ");
             EndContext();
             BeginContext(393, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4eda21bfec44399bb34cc2135e9c26e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22008538b93e48639e1419faba29bbdb", async() => {
                 BeginContext(494, 46, true);
                 WriteLiteral("<i class=\"lni lni-trash\"></i> Limpiar Bitácora");
                 EndContext();
@@ -220,7 +220,7 @@ using CowSystem.Models;
             WriteLiteral("\r\n                                    </td>\r\n                                    <td style=\"text-align:center;\">");
             EndContext();
             BeginContext(2708, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e23596856a349509c8457733105fa1a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9291ae4ffe26460a9092834ae3f0c371", async() => {
                 BeginContext(2831, 29, true);
                 WriteLiteral("<i class=\"lni lni-trash\"></i>");
                 EndContext();

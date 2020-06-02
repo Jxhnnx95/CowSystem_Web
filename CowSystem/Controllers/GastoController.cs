@@ -15,7 +15,7 @@ namespace CowSystem.Controllers
     {
         #region Context
         private readonly ApplicationDbContext _context;
-
+        private int IdEmpresa = Utilitaries.IdEmpresa;
         public GastoController(ApplicationDbContext context)
         {
             _context = context;
@@ -25,7 +25,7 @@ namespace CowSystem.Controllers
         #region List
         public IActionResult Index()
         {
-            var Types = _context.Gasto.ToList();
+            var Types = _context.Gasto.Where(x=>x.IdEmpresa == IdEmpresa).ToList();
             List<GastoViewModel> List = new List<GastoViewModel>();
             foreach (var item in Types)
             {
@@ -58,8 +58,9 @@ namespace CowSystem.Controllers
 
                 try
                 {
-                    Gasto Gasto = new Gasto
+                    Gasto gasto = new Gasto
                     {
+                        IdEmpresa = IdEmpresa,
                         Fecha = tipo.Fecha,
                         Factura = tipo.Factura,
                         Proveedor = tipo.Proveedor,
@@ -67,9 +68,41 @@ namespace CowSystem.Controllers
                         Descripcion = tipo.Descripcion,
                         UltimaActualizacion = DateTime.Now
                     };
-                    _context.Gasto.Add(Gasto);
+                    _context.Gasto.Add(gasto);
                     _context.SaveChanges();
                     TempData["msj"] = "Elemento agregado";
+
+                    //agregar historial
+                    var terneros = _context.Ganado.Select(x=> new { IdGanado = x.IdGanado, IdEmpresa = x.IdEmpresa, FechaNacimiento = x.FechaNacimiento, Tipo = x.Tipo}).Where(x => x.FechaNacimiento <= gasto.Fecha && x.IdEmpresa == IdEmpresa && (x.Tipo == 2 || x.Tipo == 3)).ToList();
+                    int totalTerneros = terneros.Count;
+                    double monto = gasto.Monto / totalTerneros;
+                    foreach (var item in terneros)
+                    {
+                        HistorialFinanciero historial = new HistorialFinanciero
+                        {
+                            IdEmpresa = IdEmpresa,
+                            IdGasto = gasto.IdGasto,
+                            IdGanado = item.IdGanado,
+                            IdTipoBalance = 1,
+                            Monto = monto,
+                            UltimaActualizacion = DateTime.Now
+                        };
+                        _context.HistorialFinanciero.Add(historial);
+                        _context.SaveChanges();
+
+                        Bitacora bitacora = new Bitacora
+                        {
+                            IdEmpresa = IdEmpresa,
+                            IdGanado = item.IdGanado,
+                            IdAccion = 6,
+                            IdHistorial = historial.IdHistorial,
+                            Url = "/Gasto/Details/" + gasto.IdGasto,
+                            IdUsuario = 0,//CAMBIAR!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            FechaRegistro = DateTime.Now
+                        };
+                        _context.Bitacora.Add(bitacora);
+                        _context.SaveChanges();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -116,17 +149,29 @@ namespace CowSystem.Controllers
             {
                 try
                 {
-                    Gasto Gasto = new Gasto
+                    Gasto gasto = _context.Gasto.Find(tipo.IdGasto);
+                    gasto.Fecha = tipo.Fecha;
+                    gasto.Factura = tipo.Factura;
+                    gasto.Proveedor = tipo.Proveedor;
+                    gasto.Descripcion = tipo.Descripcion;
+                    gasto.UltimaActualizacion = DateTime.Now;
+                    
+
+                    if (gasto.Monto !=tipo.Monto)
                     {
-                        IdGasto = tipo.IdGasto,
-                        Fecha = tipo.Fecha,
-                        Factura = tipo.Factura,
-                        Proveedor = tipo.Proveedor,
-                        Monto = tipo.Monto,
-                        Descripcion = tipo.Descripcion,
-                        UltimaActualizacion = DateTime.Now
-                    };
-                    _context.Gasto.Update(Gasto);
+                        var terneros = _context.Ganado.Select(x => new { IdGanado = x.IdGanado, IdEmpresa = x.IdEmpresa, FechaNacimiento = x.FechaNacimiento, Tipo = x.Tipo }).Where(x => x.FechaNacimiento <= gasto.Fecha && x.IdEmpresa==IdEmpresa && (x.Tipo == 2 || x.Tipo == 3)).ToList();
+                        int totalTerneros = terneros.Count;
+                        double monto = tipo.Monto / totalTerneros;
+                        var historial = _context.HistorialFinanciero.Where(x => x.IdGasto == tipo.IdGasto).ToList();
+                        foreach (var item in historial)
+                        {
+                            item.Monto = monto;
+                            _context.HistorialFinanciero.Update(item);
+                            _context.SaveChanges();
+                        }
+                    }
+                    gasto.Monto = tipo.Monto;
+                    _context.Gasto.Update(gasto);
                     _context.SaveChanges();
                     TempData["msj"] = "Elemento modificado";
                 }
@@ -154,6 +199,14 @@ namespace CowSystem.Controllers
             {
                 try
                 {
+                    var historial = _context.HistorialFinanciero.Where(x => x.IdGasto == id).ToList();
+                    foreach (var item in historial)
+                    {
+                        var bitacora = _context.Bitacora.Where(x => x.IdHistorial == item.IdHistorial).FirstOrDefault();
+                        _context.Bitacora.Remove(bitacora);
+                        _context.HistorialFinanciero.Remove(item);
+                        _context.SaveChanges();
+                    }
                     _context.Gasto.Remove(Gasto);
                     _context.SaveChanges();
                     TempData["msj"] = "Elemento eliminado";

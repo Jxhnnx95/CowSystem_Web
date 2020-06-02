@@ -1,0 +1,127 @@
+﻿@model CowSystem.Models.VacaViewModel
+
+@{
+    ViewData["Title"] = "Modificar";
+}
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8">
+            <div class="content-section">
+                <div class="content-section-head">
+                    <div class="row justify-content-between">
+                        <div class="col-6 col-sm-4">
+                            @ViewData["Title"]
+                        </div>
+                        <div class="col-6 col-sm-2">
+                            <a asp-action="Index" class="btn btn-block btn-danger"><i class="lni lni-arrow-left-circle"></i> Volver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section-body">
+                    <div class="row justify-content-center">
+
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form asp-action="Edit">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        @Html.HiddenFor(m => m.IdGanado)
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Codigo" class="control-label"></label>
+                                                    <input asp-for="Codigo" class="form-control" />
+                                                    <span asp-validation-for="Codigo" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Partos" class="control-label"></label>
+                                                    <select class="form-control" asp-for="Partos">
+                                                        <option value="0" selected>0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="FechaNacimiento" class="control-label"></label>
+                                                    <input type="date" asp-for="FechaNacimiento" class="form-control" />
+                                                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Valor" class="control-label"></label>
+                                                    <input asp-for="Valor"  class="form-control" />
+                                                    <span asp-validation-for="Valor" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="Peso" class="control-label"></label>
+                                                    <input asp-for="Peso"  class="form-control" />
+                                                    <span asp-validation-for="Peso" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="ValorPeso" class="control-label"></label>
+                                                    <input asp-for="ValorPeso" class="form-control" />
+                                                    <span asp-validation-for="ValorPeso" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="IdMadre" class="control-label"></label>
+                                                    <select class="form-control" asp-for="IdMadre" asp-items="@(new SelectList(Model.VacasList,"IdGanado","Codigo"))">
+                                                        <option value="0" selected>Desconocido</option>
+                                                    </select>
+                                                    <span asp-validation-for="IdMadre" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label asp-for="IdPadre" class="control-label"></label>
+                                                    <select class="form-control" asp-for="IdPadre" asp-items="@(new SelectList(Model.TorosList,"IdGanado","Codigo"))">
+                                                        <option value="0" selected>Desconocido</option>
+                                                    </select>
+                                                    <span asp-validation-for="IdPadre" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="form-group">
+
+                                            <button type="submit" class="btn btn-success btn-block"><i class="lni lni-save"></i> Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

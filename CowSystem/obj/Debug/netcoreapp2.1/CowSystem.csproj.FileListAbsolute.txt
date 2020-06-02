@@ -47,6 +47,10 @@ D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Gasto\Index.
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Create.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Edit.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Index.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Details.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Vaca\Create.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Vaca\Details.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Vaca\Edit.cshtml.g.cs
+D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Vaca\Index.cshtml.g.cs
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\CowSystem.csproj.CoreCompileInputs.cache
 D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-D:\projects\CowSystem\CowSystem\obj\Debug\netcoreapp2.1\Razor\Views\Ternero\Details.cshtml.g.cs

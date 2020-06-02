@@ -8,8 +8,15 @@
                 <div class="col-6 col-sm-4">
                     @ViewData["Title"]
                 </div>
-                <div class="col-6 col-sm-2">
-                    <a asp-action="Create" class="btn btn-block btn-success"><i class="lni lni-circle-plus"></i> Agregar</a>
+                <div class="col-6 col-sm-4 justify-content-end">
+                    <div class="row justify-content-between">
+                        <div class="col-6">
+                            <a asp-action="Export" target="_blank" class="btn btn-block btn-success"><i class="lni lni-windows"></i> Exportar Excel</a>
+                        </div>
+                        <div class="col-6">
+                            <a asp-action="Create" class="btn btn-block btn-success"><i class="lni lni-circle-plus"></i> Agregar</a>
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>

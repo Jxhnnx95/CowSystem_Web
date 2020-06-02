@@ -34,8 +34,6 @@
 
     //datatable global settings
     $.extend(true, $.fn.dataTable.defaults, {
-        "processing": true, // for show progress bar    
-        "serverSide": false, // for process server side    
         "filter": true, // this is for disable filter (search box)    
         "orderMulti": false,
         "pageLength": 5,
@@ -88,5 +86,6 @@
     });
     $("#tablaTerneros").DataTable({
     });
-
+    $('#tablaVaca').DataTable({
+    });
 });
